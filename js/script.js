@@ -1,12 +1,23 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 
+function incrementButton() {
+    var element = document.getElementById('incrementText');
+    var value = element.innerHTML
+
+    ++value;
+
+    console.log(value);
+    document.getElementById('incrementText').innerHTML = value
+}
+
 const jump = () => {
     mario.classList.add('jump');
 
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500);
+
 }
 
 const loop = setInterval(() => {
@@ -33,4 +44,5 @@ const loop = setInterval(() => {
 
 }, 10);
 
-document.addEventListener('keydown', jump);  
+document.addEventListener('keydown', jump); 
+document.addEventListener('keydown', incrementButton);
